@@ -1,7 +1,7 @@
 var {User} = require('./../models/user.js')
 
 var authenticate = ((req, res, next) => {
-  var token = req.header('x-auth');//as it is a req, provide only a key.
+  var token = req.header('x-auth');
 
   User.findByToken(token).then((user) => {
       if(!user) {

@@ -11,10 +11,9 @@ var {mongoose} = require('./db/mongoose');
 const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
-const {ObjectID} = require('mongodb'); //for requiring the id
+const {ObjectID} = require('mongodb');
 
 var {mongoose} = require('./db/mongoose');
-var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
 var {authenticate} = require('./middleware/authenticate');
 
@@ -38,9 +37,8 @@ app.use(bodyParser.json());
 
     user.save().then(() => {
       return user.generateAuthToken();
-      // res.send(user);
     }).then((token) => {
-      res.header('x-auth', token).send(user); //'header('x-auth', )'-> we want to send back, x-auth-> creating a custom header.
+      res.header('x-auth', token).send(user);
     }).catch((e) => {
       res.status(400).send(e);
     })

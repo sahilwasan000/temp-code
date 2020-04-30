@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 1,
-    unique: true, //to check for redundant entries.
+    unique: true,
     validate: {
       validator: validator.isEmail,
       message: '{VALUE} is not a valid email.'
@@ -82,7 +82,7 @@ UserSchema.statics.findByCredentials= function (email, password) {
     }
 
     return new Promise((resolve, reject) => {
-      bcrypt.compare(password, user.password, (err,res) => {// compare value of stored pass to input val.
+      bcrypt.compare(password, user.password, (err,res) => {
         if(res){
           resolve(user);
         }
@@ -99,7 +99,7 @@ UserSchema.methods.removeToken = function (token) {
   var user = this;
 
   return user.update({
-    $pull: { 
+    $pull: {
       tokens: {token}
     }
   });
