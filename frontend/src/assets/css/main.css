@@ -1,0 +1,35 @@
+.LoginDiv1 {
+    background: linear-gradient(#00796B, #00bb7b);
+    width: 100% !important;
+    height: 900px !important;
+    padding-top: 50px;
+}
+
+.HalfDiv1 {
+    width: 50%;
+}
+
+.HalfDiv2 {
+    padding-top: 10%;
+    width: 50%;
+}
+
+.inputBox {
+    font-size: 20px;
+}
+
+.LoginDiv2 {
+  width: 60%;
+  background-color: azure;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 5%;
+  border-radius: 2%;
+  display: flex;
+}
+/* .body {
+    height: 100%;
+    width: 100%;
+} */
